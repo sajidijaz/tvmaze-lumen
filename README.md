@@ -1,24 +1,51 @@
-# Lumen PHP Framework
+# Task
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
+The challenge is to create a JSON API, which will allow the consumer to search for TV shows by their name, using a simple query string as a GET parameter like so:
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+```bash
+http://localhost:8000/?q=deadwood
+```
 
-## Official Documentation
+## Prerequisites/Requirements
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+- PHP 7.4 or greater
 
-## Contributing
+## Installation
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Use the [composer](https://getcomposer.org/) to install packages.
 
-## Security Vulnerabilities
+```bash
+composer install
+```
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## Configuration
 
-## License
+All of the configuration options for the Lumen framework are stored in the **.env** file. Once Lumen is installed, you should also configure your local environment.
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Serving Your Application
+
+To serve your project locally you may use the built-in PHP development server:
+
+```bash
+php -S localhost:8000 -t public
+```
+
+## Steps for execute
+
+1. Open the terminal and go inside project folder.
+2. Run the command `php -S localhost:8000 -t public` to serving your application.
+3. **_Hit_**: `http://localhost:8000/?q=deadwood` for getting the results.
+
+## What we are using
+
+1. We are using the **file cache** for optimization the number of HTTP requests to the third party service
+2. After getting results we are saving the data in cache with **2 minutes** expiry time.
+
+## Unit Testing & Code Coverage
+
+`This Task` ships with unit tests using [PHPUnit](https://phpunit.de/getting-started-with-phpunit.html/).
+
+- If PHPUnit is installed globally run `phpunit` to run the tests.
+
+- If PHPUnit is not installed globally, install it locally throuh composer by running `composer install --dev`. Run the tests themselves by calling `vendor/bin/phpunit`.
+
