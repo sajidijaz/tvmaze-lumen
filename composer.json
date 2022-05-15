@@ -6,11 +6,13 @@
     "type": "project",
     "require": {
         "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.4",
         "laravel/lumen-framework": "^9.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
+        "phpstan/phpstan": "^1.6",
         "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
