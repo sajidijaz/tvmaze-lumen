@@ -49,3 +49,18 @@ php -S localhost:8000 -t public
 
 - If PHPUnit is not installed globally, install it locally throuh composer by running `composer install --dev`. Run the tests themselves by calling `vendor/bin/phpunit`.
 
+## Notes
+
+**_How you think the API can be evolved in the future, and changes you would like to make, given more time?_**
+
+Few things I can think if top of my head are:
+
+**Filtering Options:**
+The api can respond differently based on filters, for instance we can let user decide if he/she wants an exact match or an approximate result
+
+**Analytics:**
+I think it would be beneficial to extract useful insights from api usage and can be used to create a business model on top of the api and also we can improve our response to provide better user experience.
+- For example, if we know the most queried terms we can cache them even longer on our side to provide results fast or even maintain a cache for such terms with the help of a cron job and make sure user always gets up to dated data
+
+**Throttling:**
+Would be nice to implement throttling also so that users cannot just DDOS our api
